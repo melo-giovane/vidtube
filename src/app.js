@@ -18,18 +18,18 @@ app.use(express.static("public"));
 app.use(cookieParser());
 
 //log das reqs
-app.use((req, res, next) => {
-  const start = Date.now();
+// app.use((req, res, next) => {
+//   const start = Date.now();
 
-  res.on("finish", () => {
-    const duration = Date.now() - start;
-    console.log(
-      `>> ${req.method} ${req.originalUrl} [${res.statusCode}] - ${duration}ms`
-    );
-  });
+//   res.on("finish", () => {
+//     const duration = Date.now() - start;
+//     console.log(
+//       `>> ${req.method} ${req.originalUrl} [${res.statusCode}] - ${duration}ms`
+//     );
+//   });
 
-  next();
-})
+//   next();
+// })
 
 // import routes
 import healtcheckRouter from "./routes/healthcheck.routes.js"
